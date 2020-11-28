@@ -91,8 +91,8 @@ class App extends Component {
       const response = res.data;
       let userWeather = {
         city: `${response.name}, ${response.sys.country}`,
-        sunrise: response.sys.sunrise,
-        sunset: response.sys.sunset,
+        sunrise: this.calTimeStamp(response.sys.sunrise),
+        sunset: this.calTimeStamp(response.sys.sunset),
         temp: this.calCelsius(response.main.temp),
         temp_max: this.calCelsius(response.main.temp_max),
         temp_min: this.calCelsius(response.main.temp_min),
